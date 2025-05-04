@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Simple CloudFormation template to create an S3 bucket.
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-simple-s3-bucket
+      AccessControl: Private
+
+Outputs:
+  BucketName:
+    Description: Name of the created S3 bucket
+    Value: !Ref MyS3Bucket
+
+
+# Deploy the Stack Using AWS CLI. You can use the AWS CLI to deploy this CloudFormation template. Here are the commands you would run in your terminal:
+# aws cloudformation create-stack --stack-name MyS3Stack --template-body file://create-s3-bucket-template.yaml
+# aws cloudformation describe-stacks --stack-name MyS3Stack
+# aws cloudformation delete-stack --stack-name MyS3Stack
+# aws cloudformation wait stack-delete-complete --stack-name MyS3Stack
+
+# If "StackStatus": "ROLLBACK_COMPLETE" is returned, it means the stack creation failed. You can check the events to see what went wrong. Use the following command to describe the stack events:
+# aws cloudformation describe-stack-events --stack-name MyS3Stack
+
+# This will give you a list of events that occurred during the stack creation process, including any errors that may have occurred.
+# You can also check the AWS Management Console for CloudFormation to see the status of your stack and any error messages.

@@ -1,0 +1,36 @@
+AWS CloudFormation allows you to automate infrastructure deployment using templates. Here’s a simple step-by-step guide to creating a basic CloudFormation template:
+
+### **Step 1: Create a CloudFormation Template**
+A basic CloudFormation template in **YAML** format to create an **S3 bucket**:
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-cloudformation-bucket
+```
+
+### **Step 2: Save the Template**
+Save this file as `s3-bucket-template.yaml`.
+
+### **Step 3: Deploy the Stack Using AWS CLI**
+Run the following command to create the stack:
+```bash
+aws cloudformation create-stack --stack-name MyS3Stack --template-body file://s3-bucket-template.yaml
+```
+
+### **Step 4: Verify the Stack**
+Check the status of the stack:
+```bash
+aws cloudformation describe-stacks --stack-name MyS3Stack
+```
+
+### **Step 5: Delete the Stack**
+To remove the stack and its resources:
+```bash
+aws cloudformation delete-stack --stack-name MyS3Stack
+```
+
+For a more detailed guide, including video tutorials, check out [this resource](https://www.simplilearn.com/tutorials/aws-tutorial/aws-cloudformation) or the official AWS documentation [here](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html). Let me know if you need further clarification! 🚀
