@@ -36,7 +36,7 @@ fi
 # Note: The bucket name must be between 3 and 63 characters long.
 # Note: The bucket name must not be formatted as an IP address (e.g.,
 
-# to check if the bucket is created successfully)
+# to check if the bucket is created successfully. hit belo command over the terminal.
 # $ aws s3 ls
 
 # Note: The bucket name must not contain underscores or consecutive periods.
